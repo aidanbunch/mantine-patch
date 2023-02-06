@@ -2,7 +2,7 @@ import React from 'react';
 import { Selectors, DefaultProps, MantineColor, MantineNumberSize } from '@mantine/styles';
 import { IndicatorPosition } from './Indicator.types';
 import useStyles, { IndicatorStylesParams } from './Indicator.styles';
-export declare type IndicatorStylesNames = Selectors<typeof useStyles>;
+export type IndicatorStylesNames = Selectors<typeof useStyles>;
 export interface IndicatorProps extends DefaultProps<IndicatorStylesNames, IndicatorStylesParams>, React.ComponentPropsWithoutRef<'div'> {
     /** Element that should have an indicator */
     children: React.ReactNode;

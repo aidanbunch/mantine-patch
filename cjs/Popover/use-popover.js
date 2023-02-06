@@ -3,21 +3,21 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var hooks = require('@mantine/hooks');
-var reactDomInteractions = require('@floating-ui/react-dom-interactions');
+var react = require('@floating-ui/react');
 var useFloatingAutoUpdate = require('../Floating/use-floating-auto-update.js');
 
 function getPopoverMiddlewares(options) {
-  const middlewares = [reactDomInteractions.offset(options.offset)];
+  const middlewares = [react.offset(options.offset)];
   if (options.middlewares.shift) {
-    middlewares.push(reactDomInteractions.shift({ limiter: reactDomInteractions.limitShift() }));
+    middlewares.push(react.shift({ limiter: react.limitShift() }));
   }
   if (options.middlewares.flip) {
-    middlewares.push(reactDomInteractions.flip());
+    middlewares.push(react.flip());
   }
   if (options.middlewares.inline) {
-    middlewares.push(reactDomInteractions.inline());
+    middlewares.push(react.inline());
   }
-  middlewares.push(reactDomInteractions.arrow({ element: options.arrowRef, padding: options.arrowOffset }));
+  middlewares.push(react.arrow({ element: options.arrowRef, padding: options.arrowOffset }));
   return middlewares;
 }
 function usePopover(options) {
@@ -42,12 +42,12 @@ function usePopover(options) {
       setOpened(true);
     }
   };
-  const floating = reactDomInteractions.useFloating({
+  const floating = react.useFloating({
     placement: options.position,
     middleware: [
       ...getPopoverMiddlewares(options),
       ...options.width === "target" ? [
-        reactDomInteractions.size({
+        react.size({
           apply({ rects }) {
             var _a, _b;
             Object.assign((_b = (_a = floating.refs.floating.current) == null ? void 0 : _a.style) != null ? _b : {}, {

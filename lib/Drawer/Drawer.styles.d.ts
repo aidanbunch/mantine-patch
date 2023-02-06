@@ -1,6 +1,6 @@
 import React from 'react';
 import { MantineTheme } from '@mantine/styles';
-export declare type DrawerPosition = 'top' | 'bottom' | 'left' | 'right';
+export type DrawerPosition = 'top' | 'bottom' | 'left' | 'right';
 export interface DrawerStylesParams {
     position: DrawerPosition;
     size: number | string;

@@ -6,7 +6,7 @@ import { MenuDropdown } from './MenuDropdown/MenuDropdown';
 import { MenuItemStylesNames } from './MenuItem/MenuItem';
 import { MenuLabelStylesName } from './MenuLabel/MenuLabel';
 import { MenuTriggerEvent } from './Menu.types';
-export declare type MenuStylesNames = MenuItemStylesNames | MenuLabelStylesName | MenuDividerStylesNames | PopoverStylesNames;
+export type MenuStylesNames = MenuItemStylesNames | MenuLabelStylesName | MenuDividerStylesNames | PopoverStylesNames;
 export interface MenuProps extends PopoverBaseProps {
     /** Menu content */
     children?: React.ReactNode;

@@ -6,7 +6,7 @@ import { InputLabel } from './InputLabel/InputLabel';
 import { InputError } from './InputError/InputError';
 import { InputPlaceholder } from './InputPlaceholder/InputPlaceholder';
 import useStyles, { InputVariant } from './Input.styles';
-export declare type InputStylesNames = Selectors<typeof useStyles>;
+export type InputStylesNames = Selectors<typeof useStyles>;
 export interface InputSharedProps {
     /** Adds icon on the left side of input */
     icon?: React.ReactNode;

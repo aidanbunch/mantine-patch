@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ReferenceType } from '@floating-ui/react-dom-interactions';
+import { ReferenceType } from '@floating-ui/react';
 import { MantineNumberSize, MantineShadow, ClassNames, Styles } from '@mantine/styles';
 import { FloatingPosition, ArrowPosition } from '../Floating';
 import { MantineTransition } from '../Transition';

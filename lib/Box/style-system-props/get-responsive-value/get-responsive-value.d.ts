@@ -1,5 +1,5 @@
 import { MantineTheme } from '@mantine/styles';
-export declare type StyleProperty = string | string[];
+export type StyleProperty = string | string[];
 interface GetResponsiveStyles {
     value: any;
     theme: MantineTheme;

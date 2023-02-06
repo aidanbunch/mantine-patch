@@ -5,8 +5,8 @@ import { ThumbStylesNames } from '../Thumb/Thumb';
 import { TrackStylesNames } from '../Track/Track';
 import { MarksStylesNames } from '../Marks/Marks';
 import { SliderRootStylesNames } from '../SliderRoot/SliderRoot';
-export declare type RangeSliderStylesNames = SliderRootStylesNames | ThumbStylesNames | TrackStylesNames | MarksStylesNames;
-declare type Value = [number, number];
+export type RangeSliderStylesNames = SliderRootStylesNames | ThumbStylesNames | TrackStylesNames | MarksStylesNames;
+type Value = [number, number];
 export interface RangeSliderProps extends DefaultProps<RangeSliderStylesNames>, Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange' | 'defaultValue'> {
     /** Color from theme.colors */
     color?: MantineColor;

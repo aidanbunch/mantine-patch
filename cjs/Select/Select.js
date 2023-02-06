@@ -132,7 +132,8 @@ const Select = React.forwardRef((props, ref) => {
     clearButtonTabIndex,
     form,
     positionDependencies,
-    readOnly
+    readOnly,
+    hoverOnSearchChange
   } = _a, others = __objRest(_a, [
     "inputProps",
     "wrapperProps",
@@ -183,7 +184,8 @@ const Select = React.forwardRef((props, ref) => {
     "clearButtonTabIndex",
     "form",
     "positionDependencies",
-    "readOnly"
+    "readOnly",
+    "hoverOnSearchChange"
   ]);
   const { classes, cx, theme } = Select_styles['default']();
   const [dropdownOpened, _setDropdownOpened] = React.useState(initiallyOpened);
@@ -302,8 +304,12 @@ const Select = React.forwardRef((props, ref) => {
     return index;
   };
   hooks.useDidUpdate(() => {
-    setHovered(-1);
-  }, [inputValue]);
+    if (hoverOnSearchChange && inputValue) {
+      setHovered(0);
+    } else {
+      setHovered(-1);
+    }
+  }, [inputValue, hoverOnSearchChange]);
   const selectedItemIndex = _value ? filteredData.findIndex((el) => el.value === _value) : 0;
   const shouldShowDropdown = !readOnly && (filteredData.length > 0 ? dropdownOpened : dropdownOpened && !!nothingFound);
   const handlePrevious = () => {
@@ -458,7 +464,7 @@ const Select = React.forwardRef((props, ref) => {
     switchDirectionOnFlip,
     zIndex,
     dropdownPosition,
-    positionDependencies,
+    positionDependencies: [...positionDependencies, inputValue],
     classNames,
     styles,
     unstyled

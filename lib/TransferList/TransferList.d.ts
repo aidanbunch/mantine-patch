@@ -3,7 +3,7 @@ import { DefaultProps, MantineNumberSize } from '@mantine/styles';
 import { RenderListStylesNames } from './RenderList/RenderList';
 import { Selection } from './use-selection-state/use-selection-state';
 import { TransferListData, TransferListItemComponent, TransferListItem } from './types';
-export declare type TransferListStylesNames = RenderListStylesNames;
+export type TransferListStylesNames = RenderListStylesNames;
 export interface TransferListProps extends DefaultProps<TransferListStylesNames>, Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange' | 'placeholder'> {
     /** Current value */
     value: TransferListData;
@@ -47,6 +47,8 @@ export interface TransferListProps extends DefaultProps<TransferListStylesNames>
     transferAllIcon?: React.FunctionComponent<{
         reversed: boolean;
     }>;
+    /** Whether to transfer only items matching {@link filter} when clicking the transfer all control */
+    transferAllMatchingFilter?: boolean;
 }
 export declare function defaultFilter(query: string, item: TransferListItem): boolean;
 export declare const TransferList: React.ForwardRefExoticComponent<TransferListProps & React.RefAttributes<HTMLDivElement>>;

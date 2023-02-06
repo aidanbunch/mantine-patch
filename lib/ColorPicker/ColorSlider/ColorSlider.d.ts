@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultProps, MantineSize, Selectors } from '@mantine/styles';
 import { ThumbStylesNames } from '../Thumb/Thumb';
 import useStyles from './ColorSlider.styles';
-export declare type ColorSliderStylesNames = Exclude<Selectors<typeof useStyles>, 'sliderThumb'> | ThumbStylesNames;
+export type ColorSliderStylesNames = Exclude<Selectors<typeof useStyles>, 'sliderThumb'> | ThumbStylesNames;
 export interface BaseColorSliderProps extends DefaultProps<ColorSliderStylesNames>, Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'> {
     value: number;
     onChange(value: number): void;

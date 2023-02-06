@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineNumberSize, Selectors } from '@mantine/styles';
 import useStyles, { ColorSwatchStylesParams } from './ColorSwatch.styles';
-export declare type ColorSwatchStylesNames = Selectors<typeof useStyles>;
+export type ColorSwatchStylesNames = Selectors<typeof useStyles>;
 export interface ColorSwatchProps extends DefaultProps<ColorSwatchStylesNames, ColorSwatchStylesParams> {
     /** Swatch color value in any css valid format (hex, rgb, etc.) */
     color: string;

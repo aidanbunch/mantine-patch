@@ -84,7 +84,8 @@ const ColorPicker = React.forwardRef((props, ref) => {
     className,
     styles: styles$1,
     classNames,
-    unstyled
+    unstyled,
+    onColorSwatchClick
   } = _a, others = __objRest(_a, [
     "value",
     "defaultValue",
@@ -104,7 +105,8 @@ const ColorPicker = React.forwardRef((props, ref) => {
     "className",
     "styles",
     "classNames",
-    "unstyled"
+    "unstyled",
+    "onColorSwatchClick"
   ]);
   const { classes, cx, theme } = ColorPicker_styles['default']({ size, fullWidth }, { classNames, styles: styles$1, name: __staticSelector, unstyled });
   const formatRef = React.useRef(format);
@@ -197,7 +199,9 @@ const ColorPicker = React.forwardRef((props, ref) => {
     __staticSelector,
     setValue,
     onChangeEnd: (color) => {
-      onChangeEnd == null ? void 0 : onChangeEnd(converters.convertHsvaTo(format, parsers.parseColor(color)));
+      const convertedColor = converters.convertHsvaTo(format, parsers.parseColor(color));
+      onColorSwatchClick == null ? void 0 : onColorSwatchClick(convertedColor);
+      onChangeEnd == null ? void 0 : onChangeEnd(convertedColor);
     }
   }));
 });

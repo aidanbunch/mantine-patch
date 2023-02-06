@@ -1,6 +1,6 @@
 import { MantineSize, MantineNumberSize, MantineColor, MantineTheme, MantineGradient } from '@mantine/styles';
 export declare const BUTTON_VARIANTS: readonly ["filled", "outline", "light", "white", "default", "subtle", "gradient"];
-export declare type ButtonVariant = typeof BUTTON_VARIANTS[number];
+export type ButtonVariant = typeof BUTTON_VARIANTS[number];
 export interface ButtonStylesParams {
     color: MantineColor;
     size: MantineSize;

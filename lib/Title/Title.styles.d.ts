@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { MantineTheme } from '@mantine/styles';
 import type { TitleSize } from './Title';
-declare type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export interface TitleStylesParams {
     element: HeadingElement;
     size: TitleSize;

@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultProps, MantineSize, MantineNumberSize, Selectors } from '@mantine/styles';
 import { InputVariant } from '../../Input';
 import useStyles from './DefaultValue.styles';
-export declare type DefaultValueStylesNames = Selectors<typeof useStyles>;
+export type DefaultValueStylesNames = Selectors<typeof useStyles>;
 export interface MultiSelectValueProps extends DefaultProps<DefaultValueStylesNames>, React.ComponentPropsWithoutRef<'div'> {
     label: string;
     onRemove(): void;

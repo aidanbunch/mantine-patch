@@ -1,6 +1,6 @@
 import { MantineNumberSize, MantineColor, MantineTheme, MantineGradient } from '@mantine/styles';
 export declare const ACTION_ICON_VARIANTS: readonly ["subtle", "filled", "outline", "light", "default", "transparent", "gradient"];
-export declare type ActionIconVariant = typeof ACTION_ICON_VARIANTS[number];
+export type ActionIconVariant = typeof ACTION_ICON_VARIANTS[number];
 export interface ActionIconStylesParams {
     color: MantineColor;
     size: MantineNumberSize;

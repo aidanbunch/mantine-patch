@@ -1,5 +1,5 @@
 import { useUncontrolled, useDidUpdate } from '@mantine/hooks';
-import { useFloating, size, offset, shift, limitShift, flip, inline, arrow } from '@floating-ui/react-dom-interactions';
+import { useFloating, size, offset, shift, limitShift, flip, inline, arrow } from '@floating-ui/react';
 import { useFloatingAutoUpdate } from '../Floating/use-floating-auto-update.js';
 
 function getPopoverMiddlewares(options) {

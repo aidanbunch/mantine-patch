@@ -8,5 +8,5 @@ export declare const valueGetters: {
     fontSize: typeof getFontSizeValue;
     spacing: typeof getSpacingValue;
 };
-export declare type SystemValueType = keyof typeof valueGetters;
+export type SystemValueType = keyof typeof valueGetters;
 //# sourceMappingURL=value-getters.d.ts.map

@@ -26,7 +26,7 @@ export interface GridProps extends DefaultProps, React.ComponentPropsWithRef<'di
     /** Amount of columns in each row */
     columns?: number;
 }
-declare type GridComponent = ForwardRefWithStaticComponents<GridProps, {
+type GridComponent = ForwardRefWithStaticComponents<GridProps, {
     Col: typeof Col;
 }>;
 export declare const Grid: GridComponent;

@@ -1,5 +1,5 @@
 import { MantineColor, MantineNumberSize, MantineTheme } from '@mantine/styles';
-export declare type AlertVariant = 'filled' | 'outline' | 'light';
+export type AlertVariant = 'filled' | 'outline' | 'light';
 export interface AlertStylesParams {
     color: MantineColor;
     radius: MantineNumberSize;

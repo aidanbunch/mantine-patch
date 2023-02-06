@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineColor, Selectors } from '@mantine/styles';
 import useStyles from './RingProgress.styles';
-export declare type RingProgressStylesNames = Selectors<typeof useStyles>;
+export type RingProgressStylesNames = Selectors<typeof useStyles>;
 interface RingProgressSection extends React.ComponentPropsWithRef<'circle'> {
     value: number;
     color: MantineColor;
@@ -18,6 +18,8 @@ export interface RingProgressProps extends DefaultProps<RingProgressStylesNames>
     roundCaps?: boolean;
     /** Ring sections */
     sections: RingProgressSection[];
+    /** Color of the root section, key of theme.colors or CSS color value */
+    rootColor?: MantineColor;
 }
 export declare const RingProgress: React.ForwardRefExoticComponent<RingProgressProps & React.RefAttributes<HTMLDivElement>>;
 export {};

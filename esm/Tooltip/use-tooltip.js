@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { useDelayGroupContext, useFloating, offset, shift, flip, arrow, inline, useInteractions, useHover, useFocus, useRole, useDismiss, useDelayGroup } from '@floating-ui/react-dom-interactions';
+import { useDelayGroupContext, useFloating, offset, shift, flip, arrow, inline, useInteractions, useHover, useFocus, useRole, useDismiss, useDelayGroup } from '@floating-ui/react';
 import { useId, useDidUpdate } from '@mantine/hooks';
 import { useTooltipGroupContext } from './TooltipGroup/TooltipGroup.context.js';
 import { useFloatingAutoUpdate } from '../Floating/use-floating-auto-update.js';

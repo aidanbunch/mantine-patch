@@ -3,14 +3,14 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var reactDomInteractions = require('@floating-ui/react-dom-interactions');
+var react = require('@floating-ui/react');
 var hooks = require('@mantine/hooks');
 
 function useFloatingAutoUpdate({ opened, floating, positionDependencies }) {
   const [delayedUpdate, setDelayedUpdate] = React.useState(0);
   React.useEffect(() => {
     if (floating.refs.reference.current && floating.refs.floating.current) {
-      return reactDomInteractions.autoUpdate(floating.refs.reference.current, floating.refs.floating.current, floating.update);
+      return react.autoUpdate(floating.refs.reference.current, floating.refs.floating.current, floating.update);
     }
     return void 0;
   }, [floating.refs.reference, floating.refs.floating, opened, delayedUpdate]);

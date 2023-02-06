@@ -1,5 +1,5 @@
 /// <reference types="react" />
-export declare type VerticalSectionHeight = number | string | Partial<Record<string, string | number>>;
+export type VerticalSectionHeight = number | string | Partial<Record<string, string | number>>;
 export interface VerticalSectionPosition {
     top?: number;
     left?: number;

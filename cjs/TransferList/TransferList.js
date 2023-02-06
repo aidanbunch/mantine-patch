@@ -57,7 +57,8 @@ const defaultProps = {
   listHeight: 150,
   listComponent: SelectScrollArea.SelectScrollArea,
   showTransferAll: true,
-  limit: Infinity
+  limit: Infinity,
+  transferAllMatchingFilter: false
 };
 const TransferList = React.forwardRef((props, ref) => {
   const _a = styles.useComponentDefaultProps("TransferList", defaultProps, props), {
@@ -82,7 +83,8 @@ const TransferList = React.forwardRef((props, ref) => {
     limit,
     unstyled,
     transferIcon,
-    transferAllIcon
+    transferAllIcon,
+    transferAllMatchingFilter
   } = _a, others = __objRest(_a, [
     "value",
     "onChange",
@@ -105,7 +107,8 @@ const TransferList = React.forwardRef((props, ref) => {
     "limit",
     "unstyled",
     "transferIcon",
-    "transferAllIcon"
+    "transferAllIcon",
+    "transferAllMatchingFilter"
   ]);
   const [selection, handlers] = useSelectionState.useSelectionState(initialSelection);
   const [search, handleSearch] = hooks.useUncontrolled({
@@ -117,8 +120,16 @@ const TransferList = React.forwardRef((props, ref) => {
   const handleMoveAll = (listIndex) => {
     const items = Array(2);
     const moveToIndex = listIndex === 0 ? 1 : 0;
-    items[listIndex] = [];
-    items[moveToIndex] = [...value[moveToIndex], ...value[listIndex]];
+    if (transferAllMatchingFilter) {
+      const query = search[listIndex];
+      const shownItems = value[listIndex].filter((item) => filter(query, item)).slice(0, limit);
+      const hiddenItems = value[listIndex].filter((item) => !filter(query, item));
+      items[listIndex] = hiddenItems;
+      items[moveToIndex] = [...value[moveToIndex], ...shownItems];
+    } else {
+      items[listIndex] = [];
+      items[moveToIndex] = [...value[moveToIndex], ...value[listIndex]];
+    }
     onChange(items);
     handlers.deselectAll(listIndex);
   };
@@ -170,7 +181,8 @@ const TransferList = React.forwardRef((props, ref) => {
     nothingFound: Array.isArray(nothingFound) ? nothingFound[0] : nothingFound,
     query: search[0],
     onSearch: (query) => handleSearch([query, search[1]]),
-    unstyled
+    unstyled,
+    transferAllMatchingFilter
   })), /* @__PURE__ */ React__default.createElement(RenderList.RenderList, __spreadProps(__spreadValues({}, sharedListProps), {
     data: value[1],
     selection: selection[1],
@@ -184,7 +196,8 @@ const TransferList = React.forwardRef((props, ref) => {
     query: search[1],
     onSearch: (query) => handleSearch([search[0], query]),
     reversed: true,
-    unstyled
+    unstyled,
+    transferAllMatchingFilter
   })));
 });
 TransferList.displayName = "@mantine/core/TransferList";

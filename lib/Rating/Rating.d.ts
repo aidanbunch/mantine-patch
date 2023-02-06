@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultProps, MantineSize, Selectors, MantineColor } from '@mantine/styles';
 import { RatingItemStylesNames } from './RatingItem/RatingItem';
 import useStyles from './Rating.styles';
-export declare type RatingStylesNames = Selectors<typeof useStyles> | RatingItemStylesNames;
+export type RatingStylesNames = Selectors<typeof useStyles> | RatingItemStylesNames;
 export interface RatingProps extends DefaultProps<RatingStylesNames>, Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
     /** Default value for uncontrolled component */
     defaultValue?: number;

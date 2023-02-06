@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineNumberSize, MantineSize } from '@mantine/styles';
 import { InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input';
-export declare type SwitchGroupStylesNames = InputWrapperStylesNames;
+export type SwitchGroupStylesNames = InputWrapperStylesNames;
 export interface SwitchGroupProps extends DefaultProps<SwitchGroupStylesNames>, InputWrapperBaseProps, Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
     /** <Checkbox /> components only */
     children: React.ReactNode;

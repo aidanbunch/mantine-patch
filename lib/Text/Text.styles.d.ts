@@ -5,6 +5,7 @@ export interface TextStylesParams {
     variant: 'text' | 'link' | 'gradient';
     size: MantineNumberSize;
     lineClamp: number;
+    truncate: boolean;
     inline: boolean;
     inherit: boolean;
     underline: boolean;

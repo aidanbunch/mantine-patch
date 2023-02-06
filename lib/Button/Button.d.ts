@@ -3,7 +3,7 @@ import { DefaultProps, MantineSize, MantineNumberSize, MantineGradient, MantineC
 import { LoaderProps } from '../Loader';
 import { ButtonGroup } from './ButtonGroup/ButtonGroup';
 import useStyles, { ButtonVariant, ButtonStylesParams } from './Button.styles';
-export declare type ButtonStylesNames = Selectors<typeof useStyles>;
+export type ButtonStylesNames = Selectors<typeof useStyles>;
 export interface ButtonProps extends DefaultProps<ButtonStylesNames, ButtonStylesParams> {
     /** Predefined button size */
     size?: MantineSize;
@@ -44,6 +44,7 @@ export declare const Button: (<C = "button">(props: import("@mantine/utils").Pol
 } & Omit<Pick<any, string | number | symbol>, "component" | keyof ButtonProps> & {
     ref?: any;
 }) | (ButtonProps & {
+    /** Controls button appearance */
     component: React.ElementType<any>;
 })>, never> & {
     Group: typeof ButtonGroup;

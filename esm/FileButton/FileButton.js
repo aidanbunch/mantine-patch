@@ -34,7 +34,29 @@ const defaultProps = {
   multiple: false
 };
 const FileButton = forwardRef((props, ref) => {
-  const _a = useComponentDefaultProps("FileButton", defaultProps, props), { onChange, children, multiple, accept, name, form, resetRef, disabled } = _a, others = __objRest(_a, ["onChange", "children", "multiple", "accept", "name", "form", "resetRef", "disabled"]);
+  const _a = useComponentDefaultProps("FileButton", defaultProps, props), {
+    onChange,
+    children,
+    multiple,
+    accept,
+    name,
+    form,
+    resetRef,
+    disabled,
+    capture,
+    inputProps
+  } = _a, others = __objRest(_a, [
+    "onChange",
+    "children",
+    "multiple",
+    "accept",
+    "name",
+    "form",
+    "resetRef",
+    "disabled",
+    "capture",
+    "inputProps"
+  ]);
   const inputRef = useRef();
   const onClick = () => {
     !disabled && inputRef.current.click();
@@ -50,7 +72,7 @@ const FileButton = forwardRef((props, ref) => {
     inputRef.current.value = "";
   };
   assignRef(resetRef, reset);
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, children(__spreadValues({ onClick }, others)), /* @__PURE__ */ React.createElement("input", {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, children(__spreadValues({ onClick }, others)), /* @__PURE__ */ React.createElement("input", __spreadValues({
     style: { display: "none" },
     type: "file",
     accept,
@@ -58,8 +80,9 @@ const FileButton = forwardRef((props, ref) => {
     onChange: handleChange,
     ref: useMergedRef(ref, inputRef),
     name,
-    form
-  }));
+    form,
+    capture
+  }, inputProps)));
 });
 FileButton.displayName = "@mantine/core/FileButton";
 

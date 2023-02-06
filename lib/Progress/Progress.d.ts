@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineNumberSize, MantineColor, Selectors } from '@mantine/styles';
 import useStyles, { ProgressStylesParams } from './Progress.styles';
-export declare type ProgressStylesNames = Selectors<typeof useStyles>;
+export type ProgressStylesNames = Selectors<typeof useStyles>;
 interface ProgressSection extends React.ComponentPropsWithRef<'div'> {
     value: number;
     color: MantineColor;

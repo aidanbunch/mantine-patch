@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
-import { useFloating, shift, getOverflowAncestors } from '@floating-ui/react-dom-interactions';
+import { useFloating, shift, getOverflowAncestors } from '@floating-ui/react';
 
 function useFloatingTooltip({
   offset,

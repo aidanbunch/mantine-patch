@@ -3,7 +3,7 @@ import { DefaultProps, MantineSize, MantineShadow } from '@mantine/styles';
 import { MantineTransition } from '../Transition';
 import { SelectItem, BaseSelectStylesNames, BaseSelectProps } from './types';
 export interface SelectSharedProps<Item, Value> {
-    /** Select data used to renderer items in dropdown */
+    /** Select data used to render items in dropdown */
     data: (string | Item)[];
     /** Controlled input value */
     value?: Value;
@@ -59,6 +59,8 @@ export interface SelectProps extends DefaultProps<BaseSelectStylesNames>, BaseSe
     onSearchChange?(query: string): void;
     /** Controlled search input value */
     searchValue?: string;
+    /** Hovers the first result when search query changes */
+    hoverOnSearchChange?: boolean;
     /** Allow creatable option  */
     creatable?: boolean;
     /** Function to get create Label */

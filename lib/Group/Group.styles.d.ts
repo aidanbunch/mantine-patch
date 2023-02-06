@@ -1,6 +1,6 @@
 import React from 'react';
 import { MantineNumberSize } from '@mantine/styles';
-export declare type GroupPosition = 'right' | 'center' | 'left' | 'apart';
+export type GroupPosition = 'right' | 'center' | 'left' | 'apart';
 export interface GroupStylesParams {
     position: GroupPosition;
     noWrap: boolean;

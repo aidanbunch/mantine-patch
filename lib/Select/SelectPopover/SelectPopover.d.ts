@@ -2,7 +2,7 @@ import React from 'react';
 import { ClassNames, MantineShadow, Styles, Selectors, DefaultProps } from '@mantine/styles';
 import { MantineTransition } from '../../Transition';
 import useStyles from './SelectPopover.styles';
-export declare type SelectPopoverStylesNames = Selectors<typeof useStyles>;
+export type SelectPopoverStylesNames = Selectors<typeof useStyles>;
 interface SelectPopoverDropdownProps extends DefaultProps<SelectPopoverStylesNames> {
     children: React.ReactNode;
     id: string;

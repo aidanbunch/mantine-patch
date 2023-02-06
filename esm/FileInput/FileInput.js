@@ -74,7 +74,9 @@ const _FileInput = forwardRef((props, ref) => {
     clearable,
     clearButtonLabel,
     clearButtonTabIndex,
-    readOnly
+    readOnly,
+    capture,
+    fileInputProps
   } = _a, others = __objRest(_a, [
     "inputProps",
     "wrapperProps",
@@ -95,7 +97,9 @@ const _FileInput = forwardRef((props, ref) => {
     "clearable",
     "clearButtonLabel",
     "clearButtonTabIndex",
-    "readOnly"
+    "readOnly",
+    "capture",
+    "fileInputProps"
   ]);
   const resetRef = useRef();
   const { classes, theme, cx } = useStyles(null, {
@@ -133,7 +137,9 @@ const _FileInput = forwardRef((props, ref) => {
     name,
     form,
     resetRef,
-    disabled: readOnly
+    disabled: readOnly,
+    capture,
+    inputProps: fileInputProps
   }, (fileButtonProps) => /* @__PURE__ */ React.createElement(Input, __spreadProps(__spreadValues(__spreadValues(__spreadValues({
     multiline: true
   }, fileButtonProps), inputProps), others), {

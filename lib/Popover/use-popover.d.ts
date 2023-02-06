@@ -17,7 +17,7 @@ interface UsePopoverOptions {
     arrowOffset: number;
 }
 export declare function usePopover(options: UsePopoverOptions): {
-    floating: import("@floating-ui/react-dom-interactions").UseFloatingReturn<import("@floating-ui/react-dom-interactions").ReferenceType>;
+    floating: import("@floating-ui/react").UseFloatingReturn<import("@floating-ui/react").ReferenceType>;
     controlled: boolean;
     opened: boolean;
     onClose: () => void;

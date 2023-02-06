@@ -5,7 +5,7 @@ import { ThumbStylesNames } from '../Thumb/Thumb';
 import { TrackStylesNames } from '../Track/Track';
 import { MarksStylesNames } from '../Marks/Marks';
 import { SliderRootStylesNames } from '../SliderRoot/SliderRoot';
-export declare type SliderStylesNames = SliderRootStylesNames | ThumbStylesNames | TrackStylesNames | MarksStylesNames;
+export type SliderStylesNames = SliderRootStylesNames | ThumbStylesNames | TrackStylesNames | MarksStylesNames;
 export interface SliderProps extends DefaultProps<SliderStylesNames>, Omit<React.ComponentPropsWithoutRef<'div'>, 'value' | 'onChange'> {
     /** Color from theme.colors */
     color?: MantineColor;

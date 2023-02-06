@@ -20,6 +20,7 @@ var __spreadValues = (a, b) => {
 var useStyles = createStyles((theme, { spacing, breakpoints, cols, verticalSpacing }) => {
   const hasVerticalSpacing = verticalSpacing != null;
   const gridBreakpoints = getSortedBreakpoints(theme, breakpoints).reduce((acc, breakpoint) => {
+    var _a, _b;
     const property = "maxWidth" in breakpoint ? "max-width" : "min-width";
     const breakpointSize = theme.fn.size({
       size: property === "max-width" ? breakpoint.maxWidth : breakpoint.minWidth,
@@ -28,10 +29,10 @@ var useStyles = createStyles((theme, { spacing, breakpoints, cols, verticalSpaci
     acc[`@media (${property}: ${breakpointSize - (property === "max-width" ? 1 : 0)}px)`] = {
       gridTemplateColumns: `repeat(${breakpoint.cols}, minmax(0, 1fr))`,
       gap: `${theme.fn.size({
-        size: breakpoint.verticalSpacing || (hasVerticalSpacing ? verticalSpacing : spacing),
+        size: (_a = breakpoint.verticalSpacing) != null ? _a : hasVerticalSpacing ? verticalSpacing : spacing,
         sizes: theme.spacing
       })}px ${theme.fn.size({
-        size: breakpoint.spacing || spacing,
+        size: (_b = breakpoint.spacing) != null ? _b : spacing,
         sizes: theme.spacing
       })}px`
     };

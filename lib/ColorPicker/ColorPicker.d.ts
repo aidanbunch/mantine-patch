@@ -6,7 +6,7 @@ import { SwatchesStylesNames } from './Swatches/Swatches';
 import { ThumbStylesNames } from './Thumb/Thumb';
 import { ColorFormat } from './types';
 import useStyles from './ColorPicker.styles';
-export declare type ColorPickerStylesNames = Selectors<typeof useStyles> | ColorSliderStylesNames | SwatchesStylesNames | SaturationStylesNames | ThumbStylesNames;
+export type ColorPickerStylesNames = Selectors<typeof useStyles> | ColorSliderStylesNames | SwatchesStylesNames | SaturationStylesNames | ThumbStylesNames;
 export interface ColorPickerBaseProps {
     /** Controlled component value */
     value?: string;
@@ -40,6 +40,8 @@ export interface ColorPickerProps extends DefaultProps<ColorPickerStylesNames>, 
     hueLabel?: string;
     /** Alpha slider aria-label */
     alphaLabel?: string;
+    /** Called when color swatch is clicked */
+    onColorSwatchClick?(color: string): void;
 }
 export declare const ColorPicker: React.ForwardRefExoticComponent<ColorPickerProps & React.RefAttributes<HTMLDivElement>>;
 //# sourceMappingURL=ColorPicker.d.ts.map

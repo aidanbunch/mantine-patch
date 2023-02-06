@@ -3,7 +3,7 @@ import { DefaultProps, MantineNumberSize, MantineColor, Selectors } from '@manti
 import { GroupProps } from '../Group/Group';
 import { PaginationItemProps } from './DefaultItem/DefaultItem';
 import useStyles, { PaginationStylesParams } from './Pagination.styles';
-export declare type PaginationStylesNames = Selectors<typeof useStyles>;
+export type PaginationStylesNames = Selectors<typeof useStyles>;
 export interface PaginationProps extends DefaultProps<PaginationStylesNames, PaginationStylesParams>, Omit<GroupProps, 'classNames' | 'styles' | 'onChange'> {
     /** Change item component */
     itemComponent?: React.FC<PaginationItemProps>;

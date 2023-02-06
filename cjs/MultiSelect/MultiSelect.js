@@ -165,7 +165,9 @@ const MultiSelect = React.forwardRef((props, ref) => {
     inputContainer,
     inputWrapperOrder,
     readOnly,
-    withAsterisk
+    withAsterisk,
+    hoverOnSearchChange,
+    disableSelectedItemFiltering
   } = _a, others = __objRest(_a, [
     "className",
     "style",
@@ -235,7 +237,9 @@ const MultiSelect = React.forwardRef((props, ref) => {
     "inputContainer",
     "inputWrapperOrder",
     "readOnly",
-    "withAsterisk"
+    "withAsterisk",
+    "hoverOnSearchChange",
+    "disableSelectedItemFiltering"
   ]);
   const { classes, cx, theme } = MultiSelect_styles['default']({ size, invalid: !!error }, { classNames, styles: styles$1, unstyled, name: "MultiSelect" });
   const { systemStyles, rest } = extractSystemStyles.extractSystemStyles(others);
@@ -292,7 +296,8 @@ const MultiSelect = React.forwardRef((props, ref) => {
     searchValue: _searchValue,
     limit,
     filter,
-    value: _value
+    value: _value,
+    disableSelectedItemFiltering
   });
   const getNextIndex = (index, nextItem, compareFn) => {
     let i = index;
@@ -304,8 +309,12 @@ const MultiSelect = React.forwardRef((props, ref) => {
     return index;
   };
   hooks.useDidUpdate(() => {
-    setHovered(-1);
-  }, [_searchValue]);
+    if (hoverOnSearchChange && _searchValue) {
+      setHovered(0);
+    } else {
+      setHovered(-1);
+    }
+  }, [_searchValue, hoverOnSearchChange]);
   hooks.useDidUpdate(() => {
     if (!disabled && _value.length > data.length) {
       setDropdownOpened(false);
@@ -496,6 +505,7 @@ const MultiSelect = React.forwardRef((props, ref) => {
     classNames,
     radius
   })));
+  const isItemSelected = (itemValue) => _value.includes(itemValue);
   const handleClear = () => {
     var _a2;
     handleSearchChange("");
@@ -545,7 +555,7 @@ const MultiSelect = React.forwardRef((props, ref) => {
     switchDirectionOnFlip,
     zIndex,
     dropdownPosition,
-    positionDependencies,
+    positionDependencies: [...positionDependencies, _searchValue],
     classNames,
     styles: styles$1,
     unstyled
@@ -644,6 +654,7 @@ const MultiSelect = React.forwardRef((props, ref) => {
     itemComponent,
     size,
     nothingFound,
+    isItemSelected,
     creatable: creatable && !!createLabel,
     createLabel,
     unstyled

@@ -1,9 +1,9 @@
 import { MantineColor, MantineNumberSize } from '@mantine/styles';
-export declare type TabsValue = string | null;
-export declare type TabsOrientation = 'horizontal' | 'vertical';
-export declare type TabsVariant = 'default' | 'outline' | 'pills';
-export declare type TabsPosition = 'left' | 'center' | 'right' | 'apart';
-export declare type TabsPlacement = 'right' | 'left';
+export type TabsValue = string | null;
+export type TabsOrientation = 'horizontal' | 'vertical';
+export type TabsVariant = 'default' | 'outline' | 'pills';
+export type TabsPosition = 'left' | 'center' | 'right' | 'apart';
+export type TabsPlacement = 'right' | 'left';
 export interface TabsStylesParams {
     placement: TabsPlacement;
     orientation: TabsOrientation;

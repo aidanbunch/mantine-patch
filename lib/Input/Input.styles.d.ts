@@ -1,5 +1,5 @@
 import { MantineNumberSize, MantineSize, MantineTheme } from '@mantine/styles';
-export declare type InputVariant = 'default' | 'filled' | 'unstyled';
+export type InputVariant = 'default' | 'filled' | 'unstyled';
 export interface InputStylesParams {
     radius: MantineNumberSize;
     size: MantineSize;

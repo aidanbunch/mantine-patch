@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultProps, Selectors, MantineNumberSize } from '@mantine/styles';
 import { TransferListItem, TransferListItemComponent } from '../types';
 import useStyles from './RenderList.styles';
-export declare type RenderListStylesNames = Selectors<typeof useStyles>;
+export type RenderListStylesNames = Selectors<typeof useStyles>;
 export interface RenderListProps extends DefaultProps<RenderListStylesNames> {
     data: TransferListItem[];
     onSelect(value: string): void;
@@ -29,8 +29,9 @@ export interface RenderListProps extends DefaultProps<RenderListStylesNames> {
     transferAllIcon?: React.FunctionComponent<{
         reversed: any;
     }>;
+    transferAllMatchingFilter: boolean;
 }
-export declare function RenderList({ className, data, onSelect, selection, itemComponent: ItemComponent, listComponent, transferIcon: TransferIcon, transferAllIcon: TransferAllIcon, searchPlaceholder, query, onSearch, filter, nothingFound, placeholder, title, showTransferAll, reversed, onMoveAll, onMove, height, radius, classNames, styles, limit, unstyled, }: RenderListProps): JSX.Element;
+export declare function RenderList({ className, data, onSelect, selection, itemComponent: ItemComponent, listComponent, transferIcon: TransferIcon, transferAllIcon: TransferAllIcon, transferAllMatchingFilter, searchPlaceholder, query, onSearch, filter, nothingFound, placeholder, title, showTransferAll, reversed, onMoveAll, onMove, height, radius, classNames, styles, limit, unstyled, }: RenderListProps): JSX.Element;
 export declare namespace RenderList {
     var displayName: string;
 }

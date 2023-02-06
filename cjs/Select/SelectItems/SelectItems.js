@@ -58,6 +58,7 @@ function SelectItems({
       "data-disabled": item.disabled || void 0,
       "data-hovered": !item.disabled && hovered === index || void 0,
       "data-selected": !item.disabled && selected || void 0,
+      selected,
       onMouseEnter: () => onItemHover(index),
       id: `${uuid}-${index}`,
       role: "option",

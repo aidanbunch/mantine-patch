@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, Selectors } from '@mantine/styles';
 import useStyles from './ListItem.styles';
-export declare type ListItemStylesNames = Selectors<typeof useStyles>;
+export type ListItemStylesNames = Selectors<typeof useStyles>;
 export interface ListItemProps extends DefaultProps<ListItemStylesNames>, React.ComponentPropsWithoutRef<'li'> {
     /** Icon to replace bullet */
     icon?: React.ReactNode;

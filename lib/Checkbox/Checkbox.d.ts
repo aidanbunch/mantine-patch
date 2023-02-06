@@ -4,7 +4,7 @@ import { ForwardRefWithStaticComponents } from '@mantine/utils';
 import { InlineInputStylesNames } from '../InlineInput';
 import { CheckboxGroup } from './CheckboxGroup/CheckboxGroup';
 import useStyles, { CheckboxStylesParams } from './Checkbox.styles';
-export declare type CheckboxStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames;
+export type CheckboxStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames;
 export interface CheckboxProps extends DefaultProps<CheckboxStylesNames, CheckboxStylesParams>, Omit<React.ComponentPropsWithRef<'input'>, 'type' | 'size'> {
     /** Key of theme.colors */
     color?: MantineColor;
@@ -34,7 +34,7 @@ export interface CheckboxProps extends DefaultProps<CheckboxStylesNames, Checkbo
     /** Displays error message after input */
     error?: React.ReactNode;
 }
-declare type CheckboxComponent = ForwardRefWithStaticComponents<CheckboxProps, {
+type CheckboxComponent = ForwardRefWithStaticComponents<CheckboxProps, {
     Group: typeof CheckboxGroup;
 }>;
 export declare const Checkbox: CheckboxComponent;

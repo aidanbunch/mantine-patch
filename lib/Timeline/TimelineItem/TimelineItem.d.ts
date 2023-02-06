@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineColor, Selectors, MantineNumberSize } from '@mantine/styles';
 import useStyles from './TimelineItem.styles';
-export declare type TimelineItemStylesNames = Selectors<typeof useStyles>;
+export type TimelineItemStylesNames = Selectors<typeof useStyles>;
 export interface TimelineItemProps extends DefaultProps<TimelineItemStylesNames>, Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
     /** Item title, rendered next to bullet */
     title?: React.ReactNode;

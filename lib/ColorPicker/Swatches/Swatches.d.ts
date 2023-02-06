@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, Selectors } from '@mantine/styles';
 import useStyles from './Swatches.styles';
-export declare type SwatchesStylesNames = Selectors<typeof useStyles>;
+export type SwatchesStylesNames = Selectors<typeof useStyles>;
 export interface SwatchesProps extends DefaultProps<SwatchesStylesNames>, Omit<React.ComponentPropsWithoutRef<'div'>, 'onSelect'> {
     data: string[];
     swatchesPerRow?: number;

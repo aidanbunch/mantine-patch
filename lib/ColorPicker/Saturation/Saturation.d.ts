@@ -3,7 +3,7 @@ import { DefaultProps, MantineSize, Selectors } from '@mantine/styles';
 import { HsvaColor } from '../types';
 import { ThumbStylesNames } from '../Thumb/Thumb';
 import useStyles from './Saturation.styles';
-export declare type SaturationStylesNames = Exclude<Selectors<typeof useStyles>, 'saturationOverlay' | 'saturationThumb'> | ThumbStylesNames;
+export type SaturationStylesNames = Exclude<Selectors<typeof useStyles>, 'saturationOverlay' | 'saturationThumb'> | ThumbStylesNames;
 interface SaturationProps extends DefaultProps<SaturationStylesNames> {
     value: HsvaColor;
     onChange(color: Partial<HsvaColor>): void;

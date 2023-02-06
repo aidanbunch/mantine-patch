@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var reactDomInteractions = require('@floating-ui/react-dom-interactions');
+var react = require('@floating-ui/react');
 var hooks = require('@mantine/hooks');
 var TooltipGroup_context = require('./TooltipGroup/TooltipGroup.context.js');
 var useFloatingAutoUpdate = require('../Floating/use-floating-auto-update.js');
@@ -14,7 +14,7 @@ function useTooltip(settings) {
   const opened = controlled ? settings.opened : uncontrolledOpened;
   const withinGroup = TooltipGroup_context.useTooltipGroupContext();
   const uid = hooks.useId();
-  const { delay: groupDelay, currentId, setCurrentId } = reactDomInteractions.useDelayGroupContext();
+  const { delay: groupDelay, currentId, setCurrentId } = react.useDelayGroupContext();
   const onChange = React.useCallback((_opened) => {
     setUncontrolledOpened(_opened);
     if (_opened) {
@@ -31,28 +31,28 @@ function useTooltip(settings) {
     update,
     placement,
     middlewareData: { arrow: { x: arrowX, y: arrowY } = {} }
-  } = reactDomInteractions.useFloating({
+  } = react.useFloating({
     placement: settings.position,
     open: opened,
     onOpenChange: onChange,
     middleware: [
-      reactDomInteractions.offset(settings.offset),
-      reactDomInteractions.shift({ padding: 8 }),
-      reactDomInteractions.flip(),
-      reactDomInteractions.arrow({ element: settings.arrowRef, padding: settings.arrowOffset }),
-      ...settings.inline ? [reactDomInteractions.inline()] : []
+      react.offset(settings.offset),
+      react.shift({ padding: 8 }),
+      react.flip(),
+      react.arrow({ element: settings.arrowRef, padding: settings.arrowOffset }),
+      ...settings.inline ? [react.inline()] : []
     ]
   });
-  const { getReferenceProps, getFloatingProps } = reactDomInteractions.useInteractions([
-    reactDomInteractions.useHover(context, {
+  const { getReferenceProps, getFloatingProps } = react.useInteractions([
+    react.useHover(context, {
       enabled: settings.events.hover,
       delay: withinGroup ? groupDelay : { open: settings.openDelay, close: settings.closeDelay },
       mouseOnly: !settings.events.touch
     }),
-    reactDomInteractions.useFocus(context, { enabled: settings.events.focus, keyboardOnly: true }),
-    reactDomInteractions.useRole(context, { role: "tooltip" }),
-    reactDomInteractions.useDismiss(context, { enabled: typeof settings.opened === void 0 }),
-    reactDomInteractions.useDelayGroup(context, { id: uid })
+    react.useFocus(context, { enabled: settings.events.focus, keyboardOnly: true }),
+    react.useRole(context, { role: "tooltip" }),
+    react.useDismiss(context, { enabled: typeof settings.opened === void 0 }),
+    react.useDelayGroup(context, { id: uid })
   ]);
   useFloatingAutoUpdate.useFloatingAutoUpdate({
     opened,

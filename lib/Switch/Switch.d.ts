@@ -4,7 +4,7 @@ import { ForwardRefWithStaticComponents } from '@mantine/utils';
 import { SwitchGroup } from './SwitchGroup/SwitchGroup';
 import { InlineInputStylesNames } from '../InlineInput';
 import useStyles, { SwitchStylesParams } from './Switch.styles';
-export declare type SwitchStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames;
+export type SwitchStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames;
 export interface SwitchProps extends DefaultProps<SwitchStylesNames, SwitchStylesParams>, Omit<React.ComponentPropsWithRef<'input'>, 'type' | 'size'> {
     /** Id is used to bind input and label, if not passed unique id will be generated for each input */
     id?: string;
@@ -31,7 +31,7 @@ export interface SwitchProps extends DefaultProps<SwitchStylesNames, SwitchStyle
     /** Displays error message after input */
     error?: React.ReactNode;
 }
-declare type SwitchComponent = ForwardRefWithStaticComponents<SwitchProps, {
+type SwitchComponent = ForwardRefWithStaticComponents<SwitchProps, {
     Group: typeof SwitchGroup;
 }>;
 export declare const Switch: SwitchComponent;

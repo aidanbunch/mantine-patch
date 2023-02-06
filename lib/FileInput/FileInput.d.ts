@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultProps, MantineSize, Selectors } from '@mantine/styles';
 import { InputSharedProps, InputStylesNames, InputWrapperBaseProps, InputWrapperStylesNames } from '../Input';
 import useStyles from './FileInput.styles';
-export declare type FileInputStylesNames = InputStylesNames | InputWrapperStylesNames | Selectors<typeof useStyles>;
+export type FileInputStylesNames = InputStylesNames | InputWrapperStylesNames | Selectors<typeof useStyles>;
 export interface FileInputProps<Multiple extends boolean = false> extends DefaultProps<FileInputStylesNames>, InputSharedProps, InputWrapperBaseProps, Omit<React.ComponentPropsWithoutRef<'button'>, 'size' | 'onChange' | 'value' | 'defaultValue'> {
     /** Props passed to root element (InputWrapper component) */
     wrapperProps?: Record<string, any>;
@@ -34,9 +34,13 @@ export interface FileInputProps<Multiple extends boolean = false> extends Defaul
     clearButtonTabIndex?: -1 | 0;
     /** Determines whether the user can change value */
     readOnly?: boolean;
+    /** Specifies that, optionally, a new file should be captured, and which device should be used to capture that new media of a type defined by the accept attribute. */
+    capture?: boolean | 'user' | 'environment';
+    /** Spreads props to input element used to capture files */
+    fileInputProps?: React.ComponentPropsWithoutRef<'input'>;
 }
 export declare const _FileInput: React.ForwardRefExoticComponent<FileInputProps<false> & React.RefAttributes<HTMLButtonElement>>;
-declare type FileInputComponent = <Multiple extends boolean = false>(props: FileInputProps<Multiple> & {
+type FileInputComponent = <Multiple extends boolean = false>(props: FileInputProps<Multiple> & {
     ref?: React.ForwardedRef<HTMLButtonElement>;
 }) => JSX.Element;
 export declare const FileInput: FileInputComponent;

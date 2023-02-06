@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineNumberSize, MantineSize } from '@mantine/styles';
 import { InputWrapperBaseProps, InputWrapperStylesNames } from '../../Input';
-export declare type RadioGroupStylesNames = InputWrapperStylesNames;
+export type RadioGroupStylesNames = InputWrapperStylesNames;
 export interface RadioGroupProps extends DefaultProps<RadioGroupStylesNames>, InputWrapperBaseProps, Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
     /** <Radio /> components */
     children: React.ReactNode;

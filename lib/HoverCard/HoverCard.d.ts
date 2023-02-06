@@ -1,5 +1,6 @@
 import React from 'react';
-import { PopoverBaseProps } from '../Popover';
+import { ClassNames, Styles } from '@mantine/styles';
+import { PopoverBaseProps, PopoverStylesNames, PopoverStylesParams } from '../Popover';
 import { HoverCardDropdown } from './HoverCardDropdown/HoverCardDropdown';
 export interface HoverCardProps extends PopoverBaseProps {
     /** HoverCard.Target and HoverCard.Dropdown components */
@@ -14,6 +15,9 @@ export interface HoverCardProps extends PopoverBaseProps {
     openDelay?: number;
     /** Close delay in ms */
     closeDelay?: number;
+    unstyled?: boolean;
+    classNames?: ClassNames<PopoverStylesNames>;
+    styles?: Styles<PopoverStylesNames, PopoverStylesParams>;
 }
 export declare function HoverCard(props: HoverCardProps): JSX.Element;
 export declare namespace HoverCard {

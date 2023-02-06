@@ -22,13 +22,13 @@ export declare function useTooltip(settings: UseTooltip): {
     y: number;
     arrowX: number;
     arrowY: number;
-    reference: (node: import("@floating-ui/react-dom-interactions").ReferenceType) => void;
+    reference: (node: import("@floating-ui/react").ReferenceType) => void;
     floating: (node: HTMLElement) => void;
     getFloatingProps: (userProps?: import("react").HTMLProps<HTMLElement>) => Record<string, unknown>;
     getReferenceProps: (userProps?: import("react").HTMLProps<Element>) => Record<string, unknown>;
     isGroupPhase: boolean;
     opened: boolean;
-    placement: import("@floating-ui/react-dom-interactions").Placement;
+    placement: import("@floating-ui/react").Placement;
 };
 export {};
 //# sourceMappingURL=use-tooltip.d.ts.map

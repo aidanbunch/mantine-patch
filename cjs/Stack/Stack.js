@@ -42,7 +42,7 @@ var __objRest = (source, exclude) => {
 const defaultProps = {
   spacing: "md",
   align: "stretch",
-  justify: "top"
+  justify: "flex-start"
 };
 const Stack = React.forwardRef((props, ref) => {
   const _a = styles.useComponentDefaultProps("Stack", defaultProps, props), { spacing, className, align, justify, unstyled } = _a, others = __objRest(_a, ["spacing", "className", "align", "justify", "unstyled"]);

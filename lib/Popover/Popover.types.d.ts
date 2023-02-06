@@ -2,8 +2,8 @@
 import { Selectors } from '@mantine/styles';
 import useStyles from './PopoverDropdown/PopoverDropdown.styles';
 export type { PopoverStylesParams } from './PopoverDropdown/PopoverDropdown.styles';
-export declare type PopoverStylesNames = Selectors<typeof useStyles>;
-export declare type PopoverWidth = 'target' | React.CSSProperties['width'];
+export type PopoverStylesNames = Selectors<typeof useStyles>;
+export type PopoverWidth = 'target' | React.CSSProperties['width'];
 export interface PopoverMiddlewares {
     shift: boolean;
     flip: boolean;

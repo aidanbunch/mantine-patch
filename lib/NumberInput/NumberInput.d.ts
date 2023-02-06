@@ -3,14 +3,14 @@ import { DefaultProps, Selectors } from '@mantine/styles';
 import { TextInput } from '../TextInput';
 import { InputStylesNames, InputWrapperStylesNames } from '../Input';
 import useStyles from './NumberInput.styles';
-export declare type InnerNumberInputStylesNames = Selectors<typeof useStyles>;
-export declare type NumberInputStylesNames = InputStylesNames | InputWrapperStylesNames | InnerNumberInputStylesNames;
+export type InnerNumberInputStylesNames = Selectors<typeof useStyles>;
+export type NumberInputStylesNames = InputStylesNames | InputWrapperStylesNames | InnerNumberInputStylesNames;
 export interface NumberInputHandlers {
     increment(): void;
     decrement(): void;
 }
-declare type Formatter = (value: string | undefined) => string;
-declare type Parser = (value: string | undefined) => string | undefined;
+type Formatter = (value: string | undefined) => string;
+type Parser = (value: string | undefined) => string | undefined;
 export interface NumberInputProps extends DefaultProps<NumberInputStylesNames>, Omit<React.ComponentPropsWithoutRef<typeof TextInput>, 'onChange' | 'value' | 'classNames' | 'styles' | 'type'> {
     /** onChange input handler for controlled variant, note that input event is not exposed. It will return undefined if the input is empty, otherwise it'll return a number */
     onChange?(value: number | undefined): void;

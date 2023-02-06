@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultProps, MantineNumberSize, MantineColor, Selectors } from '@mantine/styles';
 import { MarksStylesNames } from '../Marks/Marks';
 import useStyles from './Track.styles';
-export declare type TrackStylesNames = Selectors<typeof useStyles> | MarksStylesNames;
+export type TrackStylesNames = Selectors<typeof useStyles> | MarksStylesNames;
 export interface TrackProps extends DefaultProps<TrackStylesNames> {
     filled: number;
     offset?: number;

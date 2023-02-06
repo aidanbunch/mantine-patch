@@ -84,7 +84,7 @@ const defaultProps = {
   transitionDuration: 0,
   withinPortal: true,
   shadow: "md",
-  withEyeDropper: false
+  withEyeDropper: true
 };
 const ColorInput = React.forwardRef((props, ref) => {
   const _a = useInputProps.useInputProps("ColorInput", defaultProps, props), {
@@ -95,6 +95,7 @@ const ColorInput = React.forwardRef((props, ref) => {
     onChangeEnd,
     onFocus,
     onBlur,
+    onClick,
     value,
     defaultValue,
     disallowInput,
@@ -117,7 +118,9 @@ const ColorInput = React.forwardRef((props, ref) => {
     withEyeDropper,
     eyeDropperIcon,
     rightSection,
-    rightSectionWidth
+    rightSectionWidth,
+    closeOnColorSwatchClick,
+    disabled
   } = _a, others = __objRest(_a, [
     "wrapperProps",
     "inputProps",
@@ -126,6 +129,7 @@ const ColorInput = React.forwardRef((props, ref) => {
     "onChangeEnd",
     "onFocus",
     "onBlur",
+    "onClick",
     "value",
     "defaultValue",
     "disallowInput",
@@ -148,7 +152,9 @@ const ColorInput = React.forwardRef((props, ref) => {
     "withEyeDropper",
     "eyeDropperIcon",
     "rightSection",
-    "rightSectionWidth"
+    "rightSectionWidth",
+    "closeOnColorSwatchClick",
+    "disabled"
   ]);
   const theme = styles.useMantineTheme();
   const [dropdownOpened, setDropdownOpened] = React.useState(false);
@@ -168,13 +174,17 @@ const ColorInput = React.forwardRef((props, ref) => {
     size: theme.fn.size({ size: inputProps.size, sizes: EYE_DROPPER_SIZES })
   }));
   const handleInputFocus = (event) => {
-    typeof onFocus === "function" && onFocus(event);
+    onFocus == null ? void 0 : onFocus(event);
     setDropdownOpened(true);
   };
   const handleInputBlur = (event) => {
-    typeof onBlur === "function" && onBlur(event);
+    onBlur == null ? void 0 : onBlur(event);
     setDropdownOpened(false);
     fixOnBlur && setValue(lastValidValue);
+  };
+  const handleInputClick = (event) => {
+    onClick == null ? void 0 : onClick(event);
+    setDropdownOpened(true);
   };
   React.useEffect(() => {
     if (parsers.isColorValid(_value) || _value.trim() === "") {
@@ -205,10 +215,12 @@ const ColorInput = React.forwardRef((props, ref) => {
   }, /* @__PURE__ */ React__default.createElement(Popover.Popover.Target, null, /* @__PURE__ */ React__default.createElement("div", null, /* @__PURE__ */ React__default.createElement(Input.Input, __spreadProps(__spreadValues(__spreadValues({
     autoComplete: "nope"
   }, others), inputProps), {
+    disabled,
     ref,
     __staticSelector: "ColorInput",
     onFocus: handleInputFocus,
     onBlur: handleInputBlur,
+    onClick: handleInputClick,
     spellCheck: false,
     value: _value,
     onChange: (event) => {
@@ -227,7 +239,7 @@ const ColorInput = React.forwardRef((props, ref) => {
     unstyled,
     classNames,
     styles: styles$1,
-    rightSection: rightSection || (eyeDropperSupported ? eyeDropper : null),
+    rightSection: rightSection || (withEyeDropper && !disabled && !readOnly && eyeDropperSupported ? eyeDropper : null),
     rightSectionWidth: rightSectionWidth != null ? rightSectionWidth : theme.fn.size({ size: inputProps.size, sizes: RIGHT_SECTION_WIDTH })
   })))), /* @__PURE__ */ React__default.createElement(Popover.Popover.Dropdown, {
     onMouseDown: (event) => event.preventDefault(),
@@ -245,7 +257,8 @@ const ColorInput = React.forwardRef((props, ref) => {
     focusable: false,
     unstyled,
     styles: styles$1,
-    classNames
+    classNames,
+    onColorSwatchClick: () => closeOnColorSwatchClick && setDropdownOpened(false)
   }))));
 });
 ColorInput.displayName = "@mantine/core/ColorInput";

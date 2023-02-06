@@ -1,7 +1,7 @@
 import React from 'react';
 import { MantineNumberSize, DefaultProps, Selectors, MantineStyleSystemSize } from '@mantine/styles';
 import useStyles from './AppShell.styles';
-export declare type AppShellStylesNames = Selectors<typeof useStyles>;
+export type AppShellStylesNames = Selectors<typeof useStyles>;
 export interface AppShellProps extends Omit<DefaultProps<AppShellStylesNames>, MantineStyleSystemSize> {
     /** Determines how Navbar and Aside components are positioned relative to Header and Footer components */
     layout?: 'default' | 'alt';

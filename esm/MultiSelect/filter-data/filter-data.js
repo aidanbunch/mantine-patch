@@ -1,11 +1,19 @@
-function filterData({ data, searchable, limit, searchValue, filter, value }) {
+function filterData({
+  data,
+  searchable,
+  limit,
+  searchValue,
+  filter,
+  value,
+  disableSelectedItemFiltering
+}) {
   if (!searchable && value.length === 0) {
     return data;
   }
   if (!searchable) {
     const result2 = [];
     for (let i = 0; i < data.length; i += 1) {
-      if (!value.some((val) => val === data[i].value && !data[i].disabled)) {
+      if (!!disableSelectedItemFiltering || !value.some((val) => val === data[i].value && !data[i].disabled)) {
         result2.push(data[i]);
       }
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineNumberSize, Selectors } from '@mantine/styles';
 import useStyles, { ImageStylesParams } from './Image.styles';
-export declare type ImageStylesNames = Selectors<typeof useStyles>;
+export type ImageStylesNames = Selectors<typeof useStyles>;
 export interface ImageProps extends DefaultProps<ImageStylesNames, ImageStylesParams>, Omit<React.ComponentPropsWithoutRef<'div'>, 'placeholder'> {
     /** Image src */
     src?: string | null;

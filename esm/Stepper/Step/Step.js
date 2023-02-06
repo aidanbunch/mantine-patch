@@ -50,9 +50,18 @@ const defaultProps = {
   iconPosition: "left",
   __staticSelector: "Step"
 };
+const getStepFragment = (Fragment, step) => {
+  if (typeof Fragment === "function") {
+    return /* @__PURE__ */ React.createElement(Fragment, {
+      step
+    });
+  }
+  return Fragment;
+};
 const Step = forwardRef((props, ref) => {
   const _a = useComponentDefaultProps("StepperStep", defaultProps, props), {
     className,
+    step,
     state,
     color,
     icon,
@@ -75,6 +84,7 @@ const Step = forwardRef((props, ref) => {
     orientation
   } = _a, others = __objRest(_a, [
     "className",
+    "step",
     "state",
     "color",
     "icon",
@@ -122,14 +132,14 @@ const Step = forwardRef((props, ref) => {
     color: "#fff",
     size: _iconSize,
     className: classes.stepLoader
-  }) : completedIcon || /* @__PURE__ */ React.createElement(CheckboxIcon, {
+  }) : getStepFragment(completedIcon, step) || /* @__PURE__ */ React.createElement(CheckboxIcon, {
     indeterminate: false,
     width: _iconSize,
     height: _iconSize
   }))), state !== "stepCompleted" ? loading ? /* @__PURE__ */ React.createElement(Loader, {
     size: _iconSize,
     color
-  }) : _icon || icon : null), orientation === "vertical" && /* @__PURE__ */ React.createElement("div", {
+  }) : getStepFragment(_icon || icon, step) : null), orientation === "vertical" && /* @__PURE__ */ React.createElement("div", {
     className: cx(classes.verticalSeparator, {
       [classes.verticalSeparatorActive]: state === "stepCompleted"
     })
@@ -137,10 +147,10 @@ const Step = forwardRef((props, ref) => {
     className: classes.stepBody
   }, label && /* @__PURE__ */ React.createElement(Text, {
     className: classes.stepLabel
-  }, label), description && /* @__PURE__ */ React.createElement(Text, {
+  }, getStepFragment(label, step)), description && /* @__PURE__ */ React.createElement(Text, {
     className: classes.stepDescription,
     color: "dimmed"
-  }, description)));
+  }, getStepFragment(description, step))));
 });
 Step.displayName = "@mantine/core/Step";
 

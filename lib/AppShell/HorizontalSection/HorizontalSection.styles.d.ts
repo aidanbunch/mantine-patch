@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { MantineNumberSize } from '@mantine/styles';
-export declare type HorizontalSectionWidth = Partial<Record<string, string | number>>;
+export type HorizontalSectionWidth = Partial<Record<string, string | number>>;
 export interface HorizontalSectionPosition {
     top?: number;
     left?: number;

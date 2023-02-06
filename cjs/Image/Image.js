@@ -88,7 +88,7 @@ const Image = React.forwardRef((props, ref) => {
   const [error, setError] = React.useState(!src);
   const isPlaceholder = withPlaceholder && error;
   hooks.useDidUpdate(() => {
-    setError(false);
+    setError(!src);
   }, [src]);
   return /* @__PURE__ */ React__default.createElement(Box.Box, __spreadValues({
     className: cx(classes.root, className),

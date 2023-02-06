@@ -157,7 +157,9 @@ const MultiSelect = forwardRef((props, ref) => {
     inputContainer,
     inputWrapperOrder,
     readOnly,
-    withAsterisk
+    withAsterisk,
+    hoverOnSearchChange,
+    disableSelectedItemFiltering
   } = _a, others = __objRest(_a, [
     "className",
     "style",
@@ -227,7 +229,9 @@ const MultiSelect = forwardRef((props, ref) => {
     "inputContainer",
     "inputWrapperOrder",
     "readOnly",
-    "withAsterisk"
+    "withAsterisk",
+    "hoverOnSearchChange",
+    "disableSelectedItemFiltering"
   ]);
   const { classes, cx, theme } = useStyles({ size, invalid: !!error }, { classNames, styles, unstyled, name: "MultiSelect" });
   const { systemStyles, rest } = extractSystemStyles(others);
@@ -284,7 +288,8 @@ const MultiSelect = forwardRef((props, ref) => {
     searchValue: _searchValue,
     limit,
     filter,
-    value: _value
+    value: _value,
+    disableSelectedItemFiltering
   });
   const getNextIndex = (index, nextItem, compareFn) => {
     let i = index;
@@ -296,8 +301,12 @@ const MultiSelect = forwardRef((props, ref) => {
     return index;
   };
   useDidUpdate(() => {
-    setHovered(-1);
-  }, [_searchValue]);
+    if (hoverOnSearchChange && _searchValue) {
+      setHovered(0);
+    } else {
+      setHovered(-1);
+    }
+  }, [_searchValue, hoverOnSearchChange]);
   useDidUpdate(() => {
     if (!disabled && _value.length > data.length) {
       setDropdownOpened(false);
@@ -488,6 +497,7 @@ const MultiSelect = forwardRef((props, ref) => {
     classNames,
     radius
   })));
+  const isItemSelected = (itemValue) => _value.includes(itemValue);
   const handleClear = () => {
     var _a2;
     handleSearchChange("");
@@ -537,7 +547,7 @@ const MultiSelect = forwardRef((props, ref) => {
     switchDirectionOnFlip,
     zIndex,
     dropdownPosition,
-    positionDependencies,
+    positionDependencies: [...positionDependencies, _searchValue],
     classNames,
     styles,
     unstyled
@@ -636,6 +646,7 @@ const MultiSelect = forwardRef((props, ref) => {
     itemComponent,
     size,
     nothingFound,
+    isItemSelected,
     creatable: creatable && !!createLabel,
     createLabel,
     unstyled

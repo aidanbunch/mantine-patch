@@ -59,6 +59,7 @@ const RingProgress = React.forwardRef((props, ref) => {
     classNames,
     styles: styles$1,
     roundCaps,
+    rootColor,
     unstyled
   } = _a, others = __objRest(_a, [
     "className",
@@ -70,6 +71,7 @@ const RingProgress = React.forwardRef((props, ref) => {
     "classNames",
     "styles",
     "roundCaps",
+    "rootColor",
     "unstyled"
   ]);
   const { classes, cx } = RingProgress_styles['default'](null, { classNames, styles: styles$1, unstyled, name: "RingProgress" });
@@ -77,18 +79,17 @@ const RingProgress = React.forwardRef((props, ref) => {
     size,
     thickness,
     sections,
-    renderRoundedLineCaps: roundCaps
+    renderRoundedLineCaps: roundCaps,
+    rootColor
   }).map(({ data, sum, root, lineRoundCaps, offset }, index) => /* @__PURE__ */ React__default.createElement(Curve.Curve, __spreadProps(__spreadValues({}, data), {
     key: index,
-    value: data == null ? void 0 : data.value,
     size,
     thickness,
     sum,
     offset,
     color: data == null ? void 0 : data.color,
     root,
-    lineRoundCaps,
-    tooltip: data == null ? void 0 : data.tooltip
+    lineRoundCaps
   })));
   return /* @__PURE__ */ React__default.createElement(Box.Box, __spreadValues({
     style: __spreadValues({ width: size, height: size }, style),

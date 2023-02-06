@@ -1,6 +1,6 @@
 import { MantineNumberSize, MantineColor, MantineTheme, MantineGradient } from '@mantine/styles';
 export declare const AVATAR_VARIANTS: readonly ["filled", "light", "gradient", "outline"];
-export declare type AvatarVariant = typeof AVATAR_VARIANTS[number];
+export type AvatarVariant = typeof AVATAR_VARIANTS[number];
 export interface AvatarStylesParams {
     size: MantineNumberSize;
     radius: MantineNumberSize;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineNumberSize, MantineColor, Selectors } from '@mantine/styles';
 import useStyles from './Marks.styles';
-export declare type MarksStylesNames = Selectors<typeof useStyles>;
+export type MarksStylesNames = Selectors<typeof useStyles>;
 export interface MarksProps extends DefaultProps<MarksStylesNames> {
     marks: {
         value: number;

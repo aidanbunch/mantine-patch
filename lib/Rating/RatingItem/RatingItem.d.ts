@@ -1,7 +1,7 @@
 import React from 'react';
 import { MantineSize, Selectors, DefaultProps, MantineColor } from '@mantine/styles';
 import useStyles from './RatingItem.styles';
-export declare type RatingItemStylesNames = Selectors<typeof useStyles>;
+export type RatingItemStylesNames = Selectors<typeof useStyles>;
 export interface RatingItemProps extends DefaultProps<RatingItemStylesNames>, Omit<React.ComponentPropsWithoutRef<'input'>, 'value' | 'size'> {
     size: MantineSize;
     getSymbolLabel: (value: number) => string;

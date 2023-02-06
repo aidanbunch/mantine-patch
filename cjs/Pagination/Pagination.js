@@ -120,7 +120,7 @@ const Pagination = React.forwardRef((props, ref) => {
   }));
   return /* @__PURE__ */ React__default.createElement(Group.Group, __spreadValues({
     role: "navigation",
-    spacing: spacing || theme.fn.size({ size, sizes: theme.spacing }) / 2,
+    spacing: spacing != null ? spacing : theme.fn.size({ size, sizes: theme.spacing }) / 2,
     ref,
     sx,
     unstyled

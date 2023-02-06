@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { MantineNumberSize, MantineTheme } from '@mantine/styles';
-export declare type ColSpan = number | 'auto' | 'content';
+export type ColSpan = number | 'auto' | 'content';
 interface ColStyles {
     gutter: MantineNumberSize;
     gutterXs: MantineNumberSize;

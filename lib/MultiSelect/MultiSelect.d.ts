@@ -4,7 +4,7 @@ import { DefaultValueStylesNames } from './DefaultValue/DefaultValue';
 import { SelectItem, BaseSelectProps, BaseSelectStylesNames } from '../Select/types';
 import useStyles from './MultiSelect.styles';
 import { SelectSharedProps } from '../Select/Select';
-export declare type MultiSelectStylesNames = DefaultValueStylesNames | Exclude<Selectors<typeof useStyles>, 'searchInputEmpty' | 'searchInputInputHidden' | 'searchInputPointer'> | Exclude<BaseSelectStylesNames, 'selected'>;
+export type MultiSelectStylesNames = DefaultValueStylesNames | Exclude<Selectors<typeof useStyles>, 'searchInputEmpty' | 'searchInputInputHidden' | 'searchInputPointer'> | Exclude<BaseSelectStylesNames, 'selected'>;
 export interface MultiSelectProps extends DefaultProps<MultiSelectStylesNames>, BaseSelectProps, Omit<SelectSharedProps<SelectItem, string[]>, 'filter'> {
     /** Component used to render values */
     valueComponent?: React.FC<any>;
@@ -18,6 +18,8 @@ export interface MultiSelectProps extends DefaultProps<MultiSelectStylesNames>, 
     clearSearchOnChange?: boolean;
     /** Allow to clear item */
     clearable?: boolean;
+    /** Disable removing selected items from the list */
+    disableSelectedItemFiltering?: boolean;
     /** aria-label for clear button */
     clearButtonLabel?: string;
     /** Clear search field value on blur */
@@ -26,6 +28,8 @@ export interface MultiSelectProps extends DefaultProps<MultiSelectStylesNames>, 
     onSearchChange?(query: string): void;
     /** Controlled search input value */
     searchValue?: string;
+    /** Hovers the first result when search query changes */
+    hoverOnSearchChange?: boolean;
     /** Allow creatable option  */
     creatable?: boolean;
     /** Function to get create Label */

@@ -34,6 +34,7 @@ function RenderList({
   listComponent,
   transferIcon: TransferIcon,
   transferAllIcon: TransferAllIcon,
+  transferAllMatchingFilter,
   searchPlaceholder,
   query,
   onSearch,
@@ -189,7 +190,7 @@ function RenderList({
     size: 36,
     radius: 0,
     className: classes.transferListControl,
-    disabled: data.length === 0,
+    disabled: transferAllMatchingFilter ? filteredData.length === 0 : data.length === 0,
     onClick: onMoveAll,
     unstyled
   }, TransferAllIcon ? /* @__PURE__ */ React.createElement(TransferAllIcon, {

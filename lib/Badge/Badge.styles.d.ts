@@ -1,5 +1,5 @@
 import { MantineSize, MantineNumberSize, MantineColor, MantineGradient, MantineTheme } from '@mantine/styles';
-export declare type BadgeVariant = 'light' | 'filled' | 'outline' | 'dot' | 'gradient';
+export type BadgeVariant = 'light' | 'filled' | 'outline' | 'dot' | 'gradient';
 export interface BadgeStylesParams {
     color: MantineColor;
     size: MantineSize;

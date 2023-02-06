@@ -10,10 +10,10 @@ var useStyles = createStyles((theme, { height, width, radius, circle, animate })
     width: circle ? height : width,
     borderRadius: circle ? height : theme.fn.radius(radius),
     position: "relative",
-    overflow: "hidden",
     WebkitTransform: "translateZ(0)"
   },
   visible: {
+    overflow: "hidden",
     "&::before": {
       content: '""',
       position: "absolute",

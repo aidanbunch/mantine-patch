@@ -29,7 +29,7 @@ const sizes = {
 var useStyles = createStyles((theme, { labelPosition, size }) => ({
   root: {},
   body: {
-    display: "inline-flex"
+    display: "flex"
   },
   labelWrapper: __spreadProps(__spreadValues({}, theme.fn.fontStyles()), {
     display: "inline-flex",

@@ -4,7 +4,7 @@ import { ForwardRefWithStaticComponents } from '@mantine/utils';
 import { RadioGroup } from './RadioGroup/RadioGroup';
 import { InlineInputStylesNames } from '../InlineInput';
 import useStyles, { RadioStylesParams } from './Radio.styles';
-export declare type RadioStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames;
+export type RadioStylesNames = Selectors<typeof useStyles> | InlineInputStylesNames;
 export interface RadioProps extends DefaultProps<RadioStylesNames, RadioStylesParams>, Omit<React.ComponentPropsWithRef<'input'>, 'size'> {
     /** Radio label */
     label?: React.ReactNode;
@@ -25,7 +25,7 @@ export interface RadioProps extends DefaultProps<RadioStylesNames, RadioStylesPa
     /** Displays error message after input */
     error?: React.ReactNode;
 }
-declare type RadioComponent = ForwardRefWithStaticComponents<RadioProps, {
+type RadioComponent = ForwardRefWithStaticComponents<RadioProps, {
     Group: typeof RadioGroup;
 }>;
 export declare const Radio: RadioComponent;

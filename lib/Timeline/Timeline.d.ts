@@ -20,7 +20,7 @@ export interface TimelineProps extends DefaultProps<TimelineItemStylesNames>, Re
     /** Reverse active direction without reversing items */
     reverseActive?: boolean;
 }
-declare type TimelineComponent = ForwardRefWithStaticComponents<TimelineProps, {
+type TimelineComponent = ForwardRefWithStaticComponents<TimelineProps, {
     Item: typeof TimelineItem;
 }>;
 export declare const Timeline: TimelineComponent;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultProps, MantineSize, Selectors } from '@mantine/styles';
 import useStyles from './InlineInput.styles';
-export declare type InlineInputStylesNames = Selectors<typeof useStyles>;
+export type InlineInputStylesNames = Selectors<typeof useStyles>;
 export interface InlineInputProps extends DefaultProps<InlineInputStylesNames>, React.ComponentPropsWithoutRef<'div'> {
     __staticSelector: string;
     label: React.ReactNode;

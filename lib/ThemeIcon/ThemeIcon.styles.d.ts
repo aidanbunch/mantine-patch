@@ -1,5 +1,5 @@
 import { MantineNumberSize, MantineColor, MantineGradient } from '@mantine/styles';
-export declare type ThemeIconVariant = 'filled' | 'light' | 'gradient' | 'outline' | 'default';
+export type ThemeIconVariant = 'filled' | 'light' | 'gradient' | 'outline' | 'default';
 export interface ThemeIconStylesParams {
     color: MantineColor;
     size: MantineNumberSize;
